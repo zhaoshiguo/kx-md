@@ -1,0 +1,113 @@
+# 条件搜索项目列表
+
+## 1. API 描述：条件搜索项目列表
+
+## 2. 调用方法
+
+> get /api/project-condition
+
+## 2. 请求参数
+
+参数 | 解释 | 类型 | 是否必须 | 示例数据
+:---:|:---|:---:|:---:|:---
+projectStatus | 项目状态 | string | 否 | 
+projectImportant | 重要性 | string | 否 | 
+projectTag | 标签 | string | 否 | 
+
+标签数字以 , 号隔开
+
+## 3. 响应状态
+
+状态码 | 说明
+:---:|:---
+200 | 操作成功
+
+
+## 4. 响应数据
+
+参数 | 解释 | 类型 | 是否必须 | 示例数据
+:---:|:---|:---:|:---:|:---
+important | 重要项目 | int | 否 | 
+minor | 一般项目 | int | 否 | 
+common | 普通项目 | int | 否 | 
+
+
+## 5. 示例
+{url}/api/project-condition?projectStatus=1,2,3&projectImportant=1,2,3&projectTag=1,2,3
+
+
+### 请求数据：
+
+```json
+
+
+```
+
+
+### 响应结果：
+
+遍历data中的content显示
+
+projectStatus：项目状态  1-未接触、2-初次接触、3-NDA、4-TS、5-DD
+projectImportant：项目重要性：1-低  2-中  3-高
+
+
+```json
+{
+    "code": 200,
+    "msg": "success",
+    "data": {
+        "important": 0,
+        "minor": 0,
+        "common": 2,
+        "list": [
+            {
+                "id": 1,
+                "name": "人民日报",
+                "projectStatus": 1,
+                "projectImportant": 1,
+                "assessment": "",
+                "finance": null,
+                "rev": null,
+                "np": null,
+                "gmv": null,
+                "projectTagList": [
+                    {
+                        "id": 1,
+                        "projectId": 1,
+                        "tagName": "testest",
+                        "createdAt": "2020-01-31T02:23:43.000+0000",
+                        "updatedAt": null
+                    },
+                    {
+                        "id": 2,
+                        "projectId": 1,
+                        "tagName": null,
+                        "createdAt": null,
+                        "updatedAt": null
+                    },
+                    {
+                        "id": 3,
+                        "projectId": 1,
+                        "tagName": "c轮融资",
+                        "createdAt": null,
+                        "updatedAt": null
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "test",
+                "projectStatus": 1,
+                "projectImportant": 1,
+                "assessment": "",
+                "finance": null,
+                "rev": null,
+                "np": null,
+                "gmv": null,
+                "projectTagList": []
+            }
+        ]
+    }
+}
+```
