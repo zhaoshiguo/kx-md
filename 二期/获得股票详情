@@ -1,0 +1,67 @@
+# 获得股票详情
+
+## 1. API 描述：获得股票详情
+
+
+## 2. 调用方法
+
+> get /api/project-code-detail
+
+## 2. 请求参数
+
+参数 | 解释 | 类型 | 是否必须 | 示例数据
+:---:|:---|:---:|:---:|:---
+code | 股票代码 | string | 是 | 
+
+
+## 3. 响应状态
+
+状态码 | 说明
+:---:|:---
+200 | 操作成功
+
+
+## 4. 响应数据
+
+参数 | 解释 | 类型 | 是否必须 | 示例数据
+:---:|:---|:---:|:---:|:---
+
+
+
+## 5. 示例
+{url}/api/project-code-detail
+
+### 请求数据：
+
+备注：当有id，为修改信息，没有id为添加信息。
+所有信息可选填
+
+```json
+
+```
+
+
+### 响应结果：
+
+
+```json
+{
+    "code": 200,
+    "msg": "success",
+    "data": {
+        "code_price": "2.81",
+        "code_change": "-1.40%",
+        "code": "01288",
+        "detail": [
+            {
+                "code": "01288",
+                "content": "Announcements and Notices - &#x5b;Results of EGM&#x2f;SGM &#x2f; Re-election or Appointment of Director subject to Shareholders&#x27; Approval...",
+                "createdAt": "2020-12-15 15:44:07",
+                "id": 6,
+                "time": "2020-10-12 17:16:00",
+                "updatedAt": "2020-12-15 15:44:07"
+            }
+        ]
+    }
+}
+```
